@@ -1,0 +1,21 @@
+.side-bar
+  .side-bar__user-name
+    .side-bar__user-name__name
+      .side-bar__user-name__name__left
+        name
+      .side-bar__user-name__name__right
+        = link_to "#", class: "side-bar__user-name__name__right__new-btn" do
+          = icon('fab', 'facebook-square' ,class:"side-bar__user-name__name__right__btn")
+          %span<>
+        = link_to "#", class: "side-bar__user-name__name__right__setting-btn" do
+          = icon('fab', 'twitter',class:"side-bar__user-name__name__right__btn")
+  .side-bar__group
+    .side-bar__group__name
+      groupname
+    .side-bar__group__message
+      message
+  .side-bar__group
+    .side-bar__group__name
+      groupname
+    .side-bar__group__message
+      message

@@ -1,0 +1,163 @@
+.wrapper{
+  display:flex;
+}
+
+.side-bar{
+  background-color: #2f3e51;
+  height: 100vh;
+  width: 300px;
+  &__user-name{
+    background-color:#253141;
+    height: 100px;
+    position: relative;
+    &__name{
+      background-color: wheat;
+      height: 20px;
+      width: 260px;
+      position: absolute;
+      top: 40px;
+      left: 20px;
+      display: flex;
+      justify-content: space-between;
+      &__left{
+        line-height: 20px;
+      }
+      &__right{
+        display:flex;
+        background-color: yellowgreen;
+        height: 20px;
+        width: 60px;
+        line-height: 20px;
+        justify-content: flex-end;
+        &__new-btn{
+          padding-right: 5px;
+        }
+        &__setting-btn{
+          text-decoration: none; //この行が無いと右のボタンだけ_が残るなんでなん？
+        }
+        &__btn{
+          display: block;
+          line-height: 20px;
+          color:rgb(187, 89, 89);
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  &__group{
+    background-color: black;
+    height: 91px;
+    position: relative;
+    &__name{
+      color: #ffffff;
+      position: absolute;
+      top:20px;
+      left: 20px;
+      font-size: 15px;
+    }
+    &__message{
+      color: #ffffff;
+      position: absolute;
+      top:40px;
+      left: 20px;
+      font-size:11px;
+    }
+  }
+}
+
+.chat-main{
+  background-color: rgb(118, 118, 189);
+  height: 100vh;
+  width: calc(100vw - 300px);
+  &__group-info{
+    background-color: rgb(63, 119, 63);
+    height: 100px;
+    border-bottom: 1px solid rgb(177, 94, 94);
+    &__to{
+      margin-left: 40px;
+      position: relative;
+      display: flex;
+      &__info{
+        background-color: rgb(80, 78, 78);
+        color:#333333;
+        margin-top: 35px;
+        &__name{
+          background-color: rgb(122, 118, 111);
+          font-size: 20px;
+          margin-bottom: 15px;
+        }
+        &__member{
+          background-color: rgb(139, 130, 115);
+          font-size: 11px;
+        }
+      }
+      &__edit-btn{
+        background-color: black;
+        height: 40px;
+        color: #999999;
+        margin-top: 28px;
+        line-height: 40px;
+        text-decoration: none;
+        position: absolute;
+        right: 20px;
+      }
+    }
+  }
+  &__message-list{
+    background-color:rgb(158, 158, 85);
+    height: calc(100vh - 191px);
+    &__box{
+      padding: 35px 40px;
+      &__message{
+        margin-bottom: 46px;
+        &__info{
+          display:flex;
+          &__name{
+            margin-bottom: 10px;
+            font-size: 16px;
+          }
+          &__date{
+            margin-left: 10px;
+            font-size: 12px;
+          }
+        }
+        &__content{
+          margin-bottom: 10px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  &__message-form{
+    background-color: rgb(129, 78, 129);
+    height: 90px;
+    &__box{
+      padding: 20px 40px;
+      display:flex;
+      &__text{
+        display: flex;
+        height: 50px;
+        width: 95%;
+        line-height: 50px;
+        margin-left: 10px;
+        position: relative;
+        &__label{
+          position: absolute;
+          bottom: 30px;
+          right: 100px;
+          &__file{
+            display: none;
+          }
+        }
+      }
+      &__btn{
+        background-color: rgb(116, 116, 212);
+        height: 50px;
+        line-height: 50px;
+        text-decoration: none;
+        position: absolute;
+        right: 20px;
+      }
+    }
+  }
+}
