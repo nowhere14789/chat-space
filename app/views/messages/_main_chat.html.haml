@@ -1,0 +1,37 @@
+.chat-main
+  .chat-main__group-info
+    .chat-main__group-info__to
+      .chat-main__group-info__to__info
+        .chat-main__group-info__to__info__name
+          name
+        .chat-main__group-info__to__info__member
+          member
+      = link_to "#", class: "chat-main__group-info__to__edit-btn" do
+        Edit
+  .chat-main__message-list
+    .chat-main__message-list__box
+      .chat-main__message-list__box__message
+        .chat-main__message-list__box__message__info
+          .chat-main__message-list__box__message__info__name
+            nick
+          .chat-main__message-list__box__message__info__date
+            2019/11/30
+        .chat-main__message-list__box__message__content
+          why
+      .chat-main__message-list__box__message
+        .chat-main__message-list__box__message__info
+          .chat-main__message-list__box__message__info__name
+            nick
+          .chat-main__message-list__box__message__info__date
+            2019/11/30
+        .chat-main__message-list__box__message__content
+          why
+  .chat-main__message-form
+    .chat-main__message-form__box
+      .chat-main__message-form__box__p
+        %input.chat-main__message-form__box__p__text{placeholder: "type a message"}
+          %label{class:"chat-main__message-form__box__p__text__label"}
+            =icon('fas','image')
+            %input{class:"chat-main__message-form__box__p__text__label__file",type: "file"}
+      = link_to "#", class: "chat-main__message-form__box__btn" do
+        Send
