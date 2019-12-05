@@ -3,4 +3,7 @@ class MessagesController < ApplicationController
     #current_user.user_signed_in?(user_params)
     #redirect_to root_path
   end
+
+  def create
+  end
 end
