@@ -37,6 +37,7 @@
           text-decoration: none; //この行が無いと右のボタンだけ_が残るなんでなん？
         }
         &__btn{
+          color: #ffffff;
           display: block;
           line-height: 20px;
           text-decoration: none;
@@ -44,22 +45,24 @@
       }
     }
   }
-  &__group{
-    height: 91px;
-    position: relative;
-    &__name{
-      color: #ffffff;
-      position: absolute;
-      top:20px;
-      left: 20px;
-      font-size: 15px;
-    }
-    &__message{
-      color: #ffffff;
-      position: absolute;
-      top:40px;
-      left: 20px;
-      font-size:11px;
+  &__groups{
+    &__group{
+      height: 91px;
+      position: relative;
+      &__name{
+        color: #ffffff;
+        position: absolute;
+        top:20px;
+        left: 20px;
+        font-size: 15px;
+      }
+      &__message{
+        color: #ffffff;
+        position: absolute;
+        top:40px;
+        left: 20px;
+        font-size:11px;
+      }
     }
   }
 }
@@ -125,44 +128,42 @@
       }
     }
   }
-  &__message-form{
+  &__form{
+    position: relative;
     height: 90px;
     background-color: #ddd;
-    &__box{
+    .new_message{
       padding: 20px 40px;
       display:flex;
-      &__p{
-        display: flex;
-        position: relative;
-        width: 100%;
-        &__text{
-          display: flex;
-          height: 50px;
-          width: 100%;
-          line-height: 50px;
-          margin-left: 10px;
-          &__label{
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 1.3rem;
-            &__file{
-              display: none;
-            }
-          }
+    }
+    &__text{
+      display: flex;
+      height: 50px;
+      width: 100%;
+      &__label{
+        position: absolute;
+        top: 30px;
+        right: 130px;
+        font-size: 1.3rem;
+        .icon{
+
+        }
+        .file{
+          display: none;
         }
       }
-      &__btn{
-        background-color: #38aef0;
-        color: #ffffff;
-        font-size: inherit;
-        height: 50px;
-        width: 60px;
-        padding: 0 30px;
-        margin-left: 15px;
-        line-height: 50px;
-        text-decoration: none;
-      }
     }
+
+
+    .btn{
+      background-color: #38aef0;
+      color: #ffffff;
+      height: 50px;
+      width: 60px;
+      padding: 0 30px;
+      margin-left: 15px;
+      line-height: 50px;
+
+      }
   }
 }
