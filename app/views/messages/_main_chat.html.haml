@@ -1,13 +1,12 @@
 .chat-main
   .chat-main__group-info
-    .chat-main__group-info__to
-      .chat-main__group-info__to__info
-        .chat-main__group-info__to__info__name
-          name
-        .chat-main__group-info__to__info__member
-          member
-      = link_to "#", class: "chat-main__group-info__to__edit-btn" do
-        Edit
+    .chat-main__group-info__info
+      .chat-main__group-info__info__name
+        name
+      .chat-main__group-info__info__member
+        member
+    = link_to "#", class: "chat-main__group-info__edit-btn" do
+      Edit
   .chat-main__message-list
     = render @messages  #単数形の部分テンプレートと同じため省略形
   .chat-main__form
