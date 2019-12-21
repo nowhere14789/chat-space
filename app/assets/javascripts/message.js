@@ -2,23 +2,7 @@ $(function(){
 
 
   function buildMessage(message){
-    if(message.image.present?){
-      var html =`<div class="message">
-                  <div class="upper-message">
-                    <div class="upper-message__user-name">
-                      ${message.user}
-                    </div>
-                    <div class="upper-message__date">
-                      ${message.date}
-                    </div>
-                  </div>
-                  <div class="lower-message">
-                    <p class="lower-message__image">
-                      ${message.img}
-                    </p>
-                  </div>
-                </div>`
-    }else {
+    if(message.text || message.img.url){
       var html =`<div class="message">
                   <div class="upper-message">
                     <div class="upper-message__user-name">
@@ -33,7 +17,44 @@ $(function(){
                       ${message.content}
                     </p>
                   </div>
+                  <div class="lower-message">
+                    <img class="lower-message__image" src="${message.img.url}" alt="x"></img>
+                  </div>
                 </div>`
+    }else {
+      if(message.img.url){
+        var html =`<div class="message">
+        <div class="upper-message">
+          <div class="upper-message__user-name">
+            ${message.user}
+          </div>
+          <div class="upper-message__date">
+            ${message.date}
+          </div>
+        </div>
+        <div class="lower-message">
+          <p class="lower-message__content">
+            ${message.content}
+          </p>
+        </div>
+      </div>`
+      }else{
+        var html =`<div class="message">
+                    <div class="upper-message">
+                      <div class="upper-message__user-name">
+                        ${message.user}
+                      </div>
+                      <div class="upper-message__date">
+                        ${message.date}
+                      </div>
+                    </div>
+                    <div class="lower-message">
+                      <p class="lower-message__content">
+                        ${message.content}
+                      </p>
+                    </div>
+                  </div>`
+      }
     }
     return html;
   }
@@ -50,14 +71,16 @@ $(function(){
       dataType: 'json',
       processData: false,
       contentType: false
-    })// console.logを用いてイベント発火しているか確認
+    })
     .done(function(message){  //引数はなんでも良い
       var html = buildMessage(message);
-      console.log(message)
-      $('.chat-main__message-list').append(html)
+      $('.chat-main__message-list').append(html);
+      $('.chat-main__message-list').animate({ scrollTop: $('.chat-main__message-list')[0].scrollHeight});
+      $('.new_message')[0].reset();
+      $('.btn').attr('disabled',false);
     })
     .fail(function(message){
-      alert('エラー')；；
+      alert('メッセージ送信に失敗しました');
     })
   })
 })
